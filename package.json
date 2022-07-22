@@ -1,0 +1,22 @@
+{
+  "name": "heroku-web-app",
+  "version": "1.0.0",
+  "description": "Web Design - Akshay Deep Chowdhary Madala",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akmadala/heroku-web-app.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Akshay Deep Chowdhary Madala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akmadala/heroku-web-app/issues"
+  },
+  "homepage": "https://github.com/akmadala/heroku-web-app#readme"
+}
