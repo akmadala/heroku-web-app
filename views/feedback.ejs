@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feedback Form </title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+
+    <link rel="stylesheet" href="/css/feedback.css">
+
+
+</head>
+
+<body>
+
+    <div class="hero">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="schedule">Schedule</a></li>
+                <li><a href="game">Game</a></li>
+                <li><a href="audio">Audio</a></li>
+                <li><a href="video">Video</a></li>
+                <li><a href="feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="formContainer">
+        <div class="heading">
+            FEEDBACK FORM
+        </div>
+        <div class="description">
+            <h2> THANK YOU </h2>
+        </div>
+        <div class="form">
+            <form id="form" onsubmit="fb.validate()">
+                <label for="name">Name<span>*</span></label>
+                <input name="name" type="text" id="name" required placeholder="Eg: John..." />
+                <label for="phone">Phone<span>*</span></label>
+                <input name="phone" type="text" id="phone" required placeholder="6183334444" />
+                <label for="email">Email<span>*</span></label>
+                <input name="email" type="email" id="email" required placeholder="xyz@yourwebsite.com" />
+                <label for="address">Address<span>*</span></label>
+                <input name="address" type="text" id="address" required placeholder="st,apt,city,state" />
+                <label for="comments">Comments</label>
+                <textarea name="comments" id="comments" placeholder="Max 360 characters"></textarea>
+                <input type="submit" value="SUBMIT"/>
+            </form>
+        </div>
+
+        <div id="loading">
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+        </div>
+
+        <div id="status">
+
+        </div>
+
+    </div>
+
+    <script src="js/feedback.js"></script>
+
+
+</body>
+
+</html>

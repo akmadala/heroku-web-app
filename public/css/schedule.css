@@ -1,0 +1,167 @@
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 4rem 0;
+	font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 30px 100px;
+	width: 90%;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+nav ul li a{
+    color: #1d1d24;
+    position: relative;
+    padding: 5px 0;
+}
+nav ul li a:hover{
+    color: #fd4766;
+}
+nav ul li a:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #fd4766;
+    transition: .3s;
+    bottom: 0;
+}
+nav ul li a:hover:after{
+    width: 100%;
+}
+.hero h1{
+	color: #1f1f25;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
+    text-transform: inherit;
+    width: 100%;
+	text-align: center;
+}
+
+tbody {
+	/* display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column; */
+	min-height: 100vh;
+	padding: 4rem 0;
+	font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+table tbody {
+	width: 100%;
+	max-width: 50rem;
+}
+	tr:nth-child(even) th {
+		color: #ccc;
+		font-weight: normal;
+	}
+
+	th,
+	td {
+		padding: 0.5rem 1rem;
+	}
+
+	th {
+		font-weight: normal;
+		border-top: thin dotted #ccc;
+	}
+
+	td {
+		font-size: 0.8rem;
+		font-weight: bold;
+		line-height: 1.4;
+		border-radius: 0.2rem;
+		transition: opacity 0.3s ease;
+	}
+
+	td > span {
+		font-size: 0.8em;
+		font-weight: normal;
+		display: inline;
+		width: 100%;
+	}
+
+.stage-work {
+	background-color: #ffa726;
+}
+.stage-cutting {
+	background-color: #9ccc65;
+}
+.stage-clean {
+	background-color: #ff8a65;
+}
+.stage-cooking {
+	background-color: #b3e5fc;
+}
+.stage-leisure {
+	background-color: #81d4fa;
+}
+.stage-eat {
+	background-color: #26c6da;
+}
+
+/* body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 4rem 0;
+	font-family: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+table {
+	width: 100%;
+	max-width: 50rem;
+	
+	tr:nth-child(even) th {
+		color: #ccc;
+		font-weight: normal;
+	}
+	
+	th,
+	td {
+		padding: 0.5rem 1rem;
+	}
+	
+	th {
+		font-weight: normal;
+		border-top: thin dotted #ccc;
+	}
+	
+	td {
+		font-size: 0.8rem;
+		font-weight: bold;
+		line-height: 1.4;
+		border-radius: 0.2rem;
+		transition: opacity 0.3s ease;
+	}
+	
+	td > span {
+		font-size: 0.8em;
+		font-weight: normal;
+		display: inline;
+		width: 100%;
+	}
+}
+
+.stage-earth {background-color: #FFA726};
+.stage-mercury {background-color: #9CCC65};
+.stage-venus {background-color: #FF8A65};
+.stage-mars {background-color: #B3E5FC};
+.stage-jupiterations {background-color: #81D4FA};
+.stage-saturn {background-color: #26C6DA}; */

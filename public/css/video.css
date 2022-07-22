@@ -1,0 +1,37 @@
+h1 { text-align: center;}
+body{ background-color: #e0e2e2;
+background-text: white;}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 10px 100px;
+  width: 90%;
+}
+
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 10px 20px;
+}
+nav ul li a{
+  color: #1d1d24;
+  position: relative;
+  padding: 5px 0;
+}
+nav ul li a:hover{
+  color: #fd4766;
+}
+nav ul li a:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #fd4766;
+  transition: .3s;
+  bottom: 0;
+}
+nav ul li a:hover:after{
+  width: 100%;
+}
