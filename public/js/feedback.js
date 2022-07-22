@@ -1,5 +1,5 @@
 // const { subscribe } = require("../../routers");
-var fs = require("fs");
+// var fs = require("fs");
 
 class Feedback {
   constructor() {
@@ -124,7 +124,7 @@ class Feedback {
     alert("Form has been successfully submitted!");
     console.log(jsonData);
     
-    fs.writeFile('../data/feedback'+Date.now()+'.json', JSON.stringify(jsonData), 'utf8');
+    // fs.writeFile('../data/feedback'+Date.now()+'.json', JSON.stringify(jsonData), 'utf8');
     this.formEle.reset();
     // const url = "./php/AddFeedback.php";
     // let xhttp = new XMLHttpRequest();

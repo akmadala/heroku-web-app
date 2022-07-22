@@ -6,12 +6,12 @@ var dataFile = require('./data/data.json');
 app.set('port', process.env.PORT || 3000);
 app.set('appData',dataFile);
 app.set('view engine','ejs');
-app.set('views','app/views');
+app.set('views','views');
 
 app.locals.siteTitle = 'CSgeeks';
 app.locals.allFriends = dataFile.friends;
 
-app.use(express.static('app/public'));
+app.use(express.static('./public'));
 app.use(require('./routers/index'));
 app.use(require('./routers/schedule'));
 app.use(require('./routers/game'));
