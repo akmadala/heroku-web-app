@@ -1,5 +1,4 @@
 var express = require('express');
-// var reload = require('reload');
 var app = express();
 var dataFile = require('./data/data.json');
 
@@ -8,8 +7,11 @@ app.set('appData',dataFile);
 app.set('view engine','ejs');
 app.set('views','views');
 
-app.locals.siteTitle = 'CSgeeks';
+app.locals.siteTitle = 'Akshay Deep Chowdhary Madala';
 app.locals.allFriends = dataFile.friends;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('./public'));
 app.use(require('./routers/index'));
@@ -21,7 +23,7 @@ app.use(require('./routers/audio'));
 app.use(require('./routers/video'));
 app.use(require('./routers/feedback'));
 app.use(require('./routers/api'));
-
+// app.use(formidable());
 
 var Server = app.listen(app.get('port'), function(){
   console.log('listen to port '+app.get('port'));

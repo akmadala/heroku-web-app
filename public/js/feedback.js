@@ -1,5 +1,3 @@
-// const { subscribe } = require("../../routers");
-// var fs = require("fs");
 
 class Feedback {
   constructor() {
@@ -39,8 +37,9 @@ class Feedback {
   }
 
   initialize() {
+    this.formEle.reset();
     this.formEle.onsubmit = (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       this.removeStatus();
       this.addLoading();
       this.validate();
@@ -108,70 +107,41 @@ class Feedback {
       this.setStatus(errors);
     } else {
       let data = {
-        data: {
           email: email,
           phone: phone,
           address: address,
           name: name,
           comments: comments
-        }
       }
       this.sendData(JSON.stringify(data));
     }
   }
 
   sendData(jsonData) {
-    alert("Form has been successfully submitted!");
-    console.log(jsonData);
+    const url = "submit-feedback";
+    let xhttp = new XMLHttpRequest();
+    let that = this;
+
     
-    // fs.writeFile('../data/feedback'+Date.now()+'.json', JSON.stringify(jsonData), 'utf8');
-    this.formEle.reset();
-    // const url = "./php/AddFeedback.php";
-    // let xhttp = new XMLHttpRequest();
-    // let that = this;
-    // xhttp.onreadystatechange = function () {
-    //   if (this.readyState == 4 && this.status == 200) {
-    //     if (this.responseText) {
-    //       that.setStatus("Thank you ! We got your feedback, we look forward to more from you.");
-          // that.formEle.reset();
-    //     } else {
-    //       that.setStatus("Are you sure you entered valid data? Dont worry there might also be problem with our server. Why not give it another shot?");
-    //     }
-    //   }
-    // };
-    // xhttp.open("POST", url, true);
-    // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // xhttp.send(`data=${jsonData}`);
+    xhttp.open("POST", url);
+    xhttp.setRequestHeader("Content-type", "application/json");
+
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        if (this.responseText) {
+          that.setStatus("Thank you ! We got your feedback, we look forward to hear more from you.");
+          that.formEle.reset();
+        } else {
+          that.setStatus("Are you sure you entered valid data? Dont worry there might also be problem with our server. Why not give it another shot?");
+        }
+      }
+    };
+    
+    console.log(jsonData);
+    xhttp.send(jsonData);
   }
 
 }
 
-// function submitForm(event) {
-//   alert('submitted');
-//   console.log(event);
-// }
-
 const fb = new Feedback();
 fb.initialize();
-
-// $(function() {
-//   $.getJSON('api', updateFeedback);
-
-//   function updateFeedback(data) {
-//    var output = '';
-//    $.each(data,function(key, item) {
-//      output += '     <div class="feedback-item item-list media-list">';
-//      output += '       <div class="feedback-item media">';
-//      output += '         <div class="feedback-info media-body">';
-//      output += '           <div class="feedback-head">';
-//      output += '             <div class="feedback-title">' + item.title + '<small class="feedback-name label label-info"></small></div>';
-//      output += '           </div>';
-//      output += '           <div class="feedback-message">' + item.message + '</div>';
-//      output += '         </div>';
-//      output += '       </div>';
-//      output += '     </div>';
-//    });
-//    $('.feedback-messages').html(output);
-//   }
-
-// });

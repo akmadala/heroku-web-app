@@ -30,11 +30,24 @@
         <div class="heading">
             FEEDBACK FORM
         </div>
+        
         <div class="description">
             <h2> THANK YOU </h2>
         </div>
+        <div id="loading">
+            <div>
+            </div>
+            <div>
+            </div>
+            <div>
+            </div>
+        </div>
+
+        <div id="status">
+
+        </div>
         <div class="form">
-            <form id="form" onsubmit="fb.validate()">
+            <form id="form" action="/submit-feedback" method="post">
                 <label for="name">Name<span>*</span></label>
                 <input name="name" type="text" id="name" required placeholder="Eg: John..." />
                 <label for="phone">Phone<span>*</span></label>
@@ -47,19 +60,6 @@
                 <textarea name="comments" id="comments" placeholder="Max 360 characters"></textarea>
                 <input type="submit" value="SUBMIT"/>
             </form>
-        </div>
-
-        <div id="loading">
-            <div>
-            </div>
-            <div>
-            </div>
-            <div>
-            </div>
-        </div>
-
-        <div id="status">
-
         </div>
 
     </div>
