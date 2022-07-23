@@ -47,7 +47,7 @@ class Feedback {
   }
 
   validate() {
-    console.log("validate");
+    // console.log("validate");
     let email = this.emailEle.value.trim();
     let phone = this.phoneEle.value.trim();
     let address = this.addressEle.value.trim();
@@ -119,10 +119,9 @@ class Feedback {
 
   sendData(jsonData) {
     const url = "submit-feedback";
-    let xhttp = new XMLHttpRequest();
     let that = this;
 
-    
+    let xhttp = new XMLHttpRequest();
     xhttp.open("POST", url);
     xhttp.setRequestHeader("Content-type", "application/json");
 
@@ -137,7 +136,6 @@ class Feedback {
       }
     };
     
-    console.log(jsonData);
     xhttp.send(jsonData);
   }
 
