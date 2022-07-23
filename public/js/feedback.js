@@ -121,22 +121,22 @@ class Feedback {
     const url = "submit-feedback";
     let that = this;
 
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("POST", url);
-    xhttp.setRequestHeader("Content-type", "application/json");
+    // let xhttp = new XMLHttpRequest();
+    // xhttp.open("POST", url);
+    // xhttp.setRequestHeader("Content-type", "application/json");
 
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        if (this.responseText) {
-          that.setStatus("Thank you ! We got your feedback, we look forward to hear more from you.");
-          that.formEle.reset();
-        } else {
-          that.setStatus("Are you sure you entered valid data? Dont worry there might also be problem with our server. Why not give it another shot?");
-        }
-      }
-    };
+    // xhttp.onreadystatechange = function () {
+    //   if (this.readyState == 4 && this.status == 200) {
+    //     if (this.responseText) {
+    //       that.setStatus("Thank you ! We got your feedback, we look forward to hear more from you.");
+    //       that.formEle.reset();
+    //     } else {
+    //       that.setStatus("Are you sure you entered valid data? Dont worry there might also be problem with our server. Why not give it another shot?");
+    //     }
+    //   }
+    // };
     
-    xhttp.send(jsonData);
+    // xhttp.send(jsonData);
   }
 
 }
