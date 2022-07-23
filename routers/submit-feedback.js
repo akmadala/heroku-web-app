@@ -1,23 +1,37 @@
-var express = require('express');
-var fs = require('fs');
-var router = express.Router();
-// var app = express();
+const express = require('express');
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+const router = express.Router();
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'akmadala9@gmail.com',
+    pass: 'etnjvafehwofjzny'
+  }
+});
 
 router.post('/submit-feedback', function (req, res) {
-  console.log(req.body);
 
-  fs.writeFileSync('./public/docs/feedback/feedback_'+Date.now().toString()+'.json',
-                  JSON.stringify(req.body));
+  var data = req.body;
+  fs.writeFileSync('./public/docs/feedback/feedback_' + Date.now().toString() + '.json',
+    JSON.stringify(data));
 
-  // fs.writeFile('../public/docs/feedback/feedback_'+Date.now().toString()+'.json',
-  //             JSON.stringify(req.body),
-  //             (err) => {
-  //               if (err) throw err;
-  //               console.log('Data written to file');
-  //             }
-  //   );
+  var mailOptions = {
+    from: 'akmadala9@gmail.com',
+    to: data.email,
+    subject: 'Thank you!',
+    text: 'Dear '+data.name+', Thank you for your feedback!'
+  };
 
-  // res.send('Success');
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+
   res.render('submit-feedback', {
     pageTitle: 'Submit Feedback',
     pageID: 'submit-feedback'
