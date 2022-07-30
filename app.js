@@ -6,8 +6,8 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-// REMOVE WHEN DEPLOYING
-const db_uri = process.env.MONGODB_URI || 'mongodb+srv://akmadala:kgQv7vOLrm4FrGoy@akmadala-cluster1.ubolv.mongodb.net/?retryWrites=true&w=majority';
+
+const db_uri = process.env.MONGODB_URI;
 
 app.locals.siteTitle = 'Akshay Deep Chowdhary Madala';
 
